@@ -25,7 +25,7 @@ app.post('/todos', asyncHandler(async (req,res) => {
 }))
 app.get('/todos', asyncHandler(async (req,res) => {
   try {
-    const allTodos = await findAll('test', 'todos')
+    const allTodos = await findAll('todo', 'todos')
     res.send({Todos:allTodos})
   } catch (err) {
     res.status(400).send(`Error: ${err.message}`)
@@ -34,7 +34,7 @@ app.get('/todos', asyncHandler(async (req,res) => {
 app.get('/todos/:id', asyncHandler(async (req,res) => {
   try {
     const todoId = await req.params.id
-    const todo = await findById('test', 'todos', todoId)
+    const todo = await findById('todo', 'todos', todoId)
     if(todo){
       res.send({todo})
     } else {
