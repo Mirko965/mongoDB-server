@@ -7,7 +7,6 @@ const { findAll } = require('./mongoDB/CRUD/findAll')
 const { findById } = require('./mongoDB/CRUD/findById')
 
 const port = process.env.PORT || 3000
-let env = process.env.NODE_ENV || 'development';
 
 const app = express()
 app.use(bodyParser.json())
@@ -59,13 +58,9 @@ app.post('/users', (req,res) => {
   })
 })
 
-
-if (env !== 'test'){
   app.listen(port, () => {
     console.log(`Server listen on port ${port}`)
-  })
-}
 
 
 
-module.exports = {app};
+
