@@ -1,0 +1,22 @@
+{
+  "validator": {
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": ["text"],
+      "properties": {
+        "text": {
+          "bsonType": "string",
+          "minLength":1,
+          "description": "must be a string and is required"
+        },
+        "completed": {
+          "bsonType": "bool"
+        },
+        "createdAt": {
+          "bsonType": "number"
+        }
+      }
+    }
+  }
+}
+
