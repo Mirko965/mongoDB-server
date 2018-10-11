@@ -58,8 +58,9 @@ app.post('/users', (req,res) => {
   })
 })
 
-  app.listen(port, () => {
-    console.log(`Server listen on port ${port}`)
+app.listen(port,() => {
+  console.log(`server listening port ${port}`)
+})
 
 
 
