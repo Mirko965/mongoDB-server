@@ -11,6 +11,8 @@ const port = process.env.PORT || 3000
 const app = express()
 app.use(bodyParser.json())
 
+const dbName = 'heroku_j5rtxxh3'
+
 app.post('/todos', asyncHandler(async (req,res) => {
   try {
     const text = req.body.text
@@ -25,7 +27,7 @@ app.post('/todos', asyncHandler(async (req,res) => {
 }))
 app.get('/todos', asyncHandler(async (req,res) => {
   try {
-    const allTodos = await findAll('heroku_j5rtxxh3', 'todos')
+    const allTodos = await findAll(dbName, 'todos')
     res.send({Todos:allTodos})
   } catch (err) {
     res.status(400).send(`Error: ${err.message}`)
@@ -34,7 +36,7 @@ app.get('/todos', asyncHandler(async (req,res) => {
 app.get('/todos/:id', asyncHandler(async (req,res) => {
   try {
     const todoId = await req.params.id
-    const todo = await findById('heroku_j5rtxxh3', 'todos', todoId)
+    const todo = await findById(dbName, 'todos', todoId)
     if(todo){
       res.send({todo})
     } else {
