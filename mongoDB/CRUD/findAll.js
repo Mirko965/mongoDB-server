@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const url = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+const url = 'mongodb://heroku_j5rtxxh3:76a4mtii4t73tu2dq8g1s6ob4b@ds129233.mlab.com:29233/heroku_j5rtxxh3'
 
 const findAll = async (dbName,collName) => {
   const client = await MongoClient.connect(url,{ useNewUrlParser: true })
