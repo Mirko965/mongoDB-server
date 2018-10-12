@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const url = 'mongodb://fion:fionfion00@cluster0-shard-00-00-lvrf1.mongodb.net:27017,cluster0-shard-00-01-lvrf1.mongodb.net:27017,cluster0-shard-00-02-lvrf1.mongodb.net:27017?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true'
+const url = 'mongodb://mirko:fionfion00@ds129233.mlab.com:29233/heroku_j5rtxxh3'
 const schemaTodo = require('../schema/todos')
 
 const createCollection = async (dbName,collectionName, schema = {}) => {
