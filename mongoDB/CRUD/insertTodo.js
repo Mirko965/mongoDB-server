@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const url = 'mongodb://mirko:fionfion00@ds129233.mlab.com:29233/heroku_j5rtxxh3'
+const url = 'mongodb+srv://fion:fionfion00@cluster0-lvrf1.mongodb.net/test?retryWrites=true'
 
 const insertTodo = async (text,completed = false, createdAt = 123) => {
   const client = await MongoClient.connect(url,{ useNewUrlParser: true })

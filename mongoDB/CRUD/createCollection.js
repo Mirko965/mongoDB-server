@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const url = 'mongodb://mirko:fionfion00@ds129233.mlab.com:29233/heroku_j5rtxxh3'
+const url = 'mongodb+srv://fion:fionfion00@cluster0-lvrf1.mongodb.net/test?retryWrites=true'
 const schemaTodo = require('../schema/todos')
 
 const createCollection = async (dbName,collectionName, schema = {}) => {
@@ -21,5 +21,5 @@ const createCollection = async (dbName,collectionName, schema = {}) => {
     await client.close()
   }
 }
-createCollection('test','todos',schemaTodo)
+
 module.exports = {createCollection}
