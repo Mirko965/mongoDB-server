@@ -3,7 +3,7 @@ const url = process.env.MONGODB_URI
 
 const insertTodo = async (text,completed = false, createdAt = 123) => {
   const client = await MongoClient.connect(url,{ useNewUrlParser: true })
-  const db = await client.db('heroku_j5rtxxh3')
+  const db = await client.db('test')
   const doc = {
     text: text.trim(),
     completed,
