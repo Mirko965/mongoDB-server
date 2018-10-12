@@ -1,5 +1,5 @@
 const { MongoClient, ObjectID } = require('mongodb')
-const url = 'mongodb://mirko:fionfion00@ds129233.mlab.com:29233/heroku_j5rtxxh3'
+const url = process.env.MONGODB_URI
 
 const findById = async (dbName,collName,id) => {
   const client = await MongoClient.connect(url,{ useNewUrlParser: true })

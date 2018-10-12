@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000
 const app = express()
 app.use(bodyParser.json())
 
-const dbName = 'heroku_j5rtxxh3'
+const dbName = 'test'
 
 app.post('/todos', asyncHandler(async (req,res) => {
   try {
